@@ -6,13 +6,15 @@ Magento Pre-Commit Hooks are used for identifying simple issues before submissio
 Add this to your `.pre-commit-config.yaml`
 
 ```yaml
--   repo: https://github.com/eriocnemis/git.MagentoPreCommitHooks
-    rev: 1.0.8  # Use the ref you want to point at
+repos:
+-   repo: https://github.com/hello-mel/git.MagentoPreCommitHooks
+    rev: master
     hooks:
     -   id: magento-phpcs
-        args: ["php=php7.4", "--autofix"]
-    -   id: magento-phpmd
-    # -   id: ...
+        args: ["php=php8.1", "--standard=Magento2"]
+        exclude_types: [xml] # to exclude xml file types (xml,png) etc..
+        #exclude: 'app/code/Mel/ModuleName/Block/Adminhtml/*|app/code/Mel/*' example to exclude files
+
 ```
 
 ### Hooks available
