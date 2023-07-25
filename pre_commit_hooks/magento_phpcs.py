@@ -12,6 +12,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     retval = 0
     # path to the tested module
     module = Path.cwd()
+    # path to magento coding standard git clone folder
+    codingStandardVendor = 'magento-coding-standard';
     # prepare arguments
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -37,9 +39,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         magento = module.parent.parent.parent.parent
         # path to the phpcs
         if args.autofix:
-            exe = magento / 'vendor/bin/phpcbf'
+            exe = codingStandardVendor / 'vendor/bin/phpcbf'
         else:
-            exe = magento / 'vendor/bin/phpcs'
+            exe = codingStandardVendor / 'vendor/bin/phpcs'
 
         if exe.is_file():
             command = [args.php, f'{exe}', f'--standard={args.standard}']
