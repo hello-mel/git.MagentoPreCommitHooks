@@ -13,7 +13,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     # path to the tested module
     module = Path.cwd()
     # path to magento coding standard git clone folder
-    codingStandardVendor = 'magento-coding-standard';
+    codingStandardVendor = 'magento-coding-standard'
     # prepare arguments
     parser = argparse.ArgumentParser()
     parser.add_argument(
