@@ -11,7 +11,7 @@ repos:
     rev: master
     hooks:
     -   id: magento-phpcs
-        args: ["php=php8.1", "--standard=Magento2"]
+        args: ["--php=php8.1", "--standard=Magento2"]
         exclude_types: [xml] # to exclude xml file types (xml,png) etc..
         #exclude: 'app/code/Mel/ModuleName/Block/Adminhtml/*|app/code/Mel/*' example to exclude files
 
